@@ -28,11 +28,34 @@
     */
 
     //ENTRADA
+    let salario = Number(prompt('Informe seu salário atual'));
+    const anos = Number(prompt('Informe quanto tempo você já está na empresa'));
+    const desempenho = Number(prompt('Informe sua nota de desempenho'));
 
 
     //PROCESSAMENTO
+    let aumentoAnos = salario
+    if(anos < 1){
+        aumentoAnos = aumentoAnos + 0
+    }else if(anos >= 1 && anos <= 5){
+    aumentoAnos = (aumentoAnos * 5) / 100
+    }else{
+        aumentoAnos = (aumentoAnos * 10) / 100
+    };
+
+    let aumentoNota = salario
+    if(desempenho < 7){
+        aumentoNota = aumentoNota + 0
+    }else if(desempenho >= 7 && desempenho < 9){
+        aumentoNota = (aumentoNota * 5) / 100
+    }else{
+        aumentoNota = (aumentoNota * 10) /100
+    };
+    salario = salario + aumentoAnos + aumentoNota
+    
 
 
     //SAÍDA
+    document.write(`Sua bonificação total é de R$ ${salario}`);
     
 </script>

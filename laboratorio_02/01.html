@@ -19,9 +19,18 @@
     */
 
     //ENTRADA
+    const idade = Number(prompt('Qual sua idade?'));
+    const renda = Number(prompt('Informe sua renda mensal'));
+    const nome = prompt('Você tem o nome restrito? ("sim" para sim e "nao" para não)');
+
 
 
     //PROCESSAMENTO
+    if(idade >= 18 && renda > 2500 && nome == 'nao'){
+        document.write('Crédito APROVADO!')
+    }else{
+        document.write('Crédito REPROVADO!')
+    };
 
 
     //SAÍDA

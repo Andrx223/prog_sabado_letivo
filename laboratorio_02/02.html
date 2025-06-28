@@ -24,11 +24,24 @@
     */
 
     //ENTRADA
+    const peso = Number(prompt('Informe o peso do produto em kg'));
+    const local = prompt('Informe a região: local, regional ou nacional');
 
 
     //PROCESSAMENTO
-
+    
+    const adcional = (peso * 2.00);
+    let custo = (5.00 + adcional);
+    (local == "local") ?
+    custo = custo + 2.00 :
+    (local == "regional") ?
+    custo = custo + 5.00 :
+    custo = custo + 10.00;
+    (peso > 10) ?
+    custo = custo - 3.00 :
+    custo = custo + 0.00;
 
     //SAÍDA
+    document.write(`O custo total do envio é de R$ ${custo}`);
     
 </script>

@@ -18,11 +18,38 @@
     */
 
     //ENTRADA
+    const quarto = prompt('Informe o tipo do quarto: (suíte, duplo ou simples)');
+    const noites = Number(prompt('Informe a quantidade de noites que irá passar'));
+
 
 
     //PROCESSAMENTO
+    let erro = 0
+    let preco = 0
+    if(quarto == 'suíte'){
+        preco = noites * 400
+    }else if(quarto == "duplo"){
+        preco = noites * 250
+    }else if(quarto == 'simples'){
+        preco = noites * 150
+    }else{
+        
+         erro = erro + 1
+    }
+
+    if(noites >= 5 && noites <= 9){
+        preco = preco - (preco * 10) / 100
+    }else if(noites >= 10){
+        preco = preco - (preco * 15) / 100
+    }
 
 
     //SAÍDA
+    if(erro == 1){
+        document.write('Dado inválido')
+    }else{
+    document.write(`O custo total é de R$ ${preco}`)
+    }
+    
 
 </script>
